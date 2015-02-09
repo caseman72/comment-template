@@ -36,7 +36,7 @@ var walk_site_def = function(obj, full_key) {
 			}
 		}
 	}
-}
+};
 walk_site_def(site_def);
 
 
