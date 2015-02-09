@@ -1,0 +1,16 @@
+{
+  "name": "express-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "t.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hash-get-cwm": "git+https://github.com/caseman72/hash-get-cwm.git",
+    "hjson": "^1.6.1",
+    "string-utils": "git+https://github.com/caseman72/string-utils.git"
+  }
+}

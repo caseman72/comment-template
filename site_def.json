@@ -1,0 +1,81 @@
+{
+	layouts: {
+		main: {
+			content:
+			'''
+			<!DOCTYPE html>
+			<html>
+			<head>
+			<meta charset="utf-8" />
+			<title><!-- page.title --></title>
+			<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+			<link rel="apple-touch-icon" href="//favicon.png" />
+			<link rel="shortcut icon" href="//favicon.ico" />
+			<!-- data.meta -->
+			<!-- data.css -->
+			<!-- data.js-head -->
+			</head>
+			<body>
+			<div>
+			<!-- content -->
+			</div>
+			<!-- data.js-inline -->
+			</body>
+			</html>
+			'''
+		}
+
+		angular: {
+			content:
+			'''
+			<div class="view" ng-controller="<!-- data.ng-controller -->">
+			<!-- content -->
+			</div>
+			'''
+		}
+	}
+
+	views: {
+		home: {
+			layout: main
+			page: {
+				title: Super Application
+			}
+			file: index.htm
+			data: {
+				js-head:
+				'''
+				<script src="//head.min.js"></script>
+				'''
+
+				js-inline:
+				'''
+				<script src="//foot.js"></script>
+				'''
+
+				css:
+				'''
+				<link rel="stylesheet" type="text/css" href="//assets/a.css" />
+				<link rel="stylesheet" type="text/css" href="//assets/b.css" />
+				<link rel="stylesheet" type="text/css" href="//assets/c.css" />
+				'''
+			}
+		}
+
+		template-dashboard: {
+			layout: angular
+			file: template.dashboard.htm
+			data: {
+				ng-controller: IndexCtrl
+			}
+		}
+
+		template-login: {
+			layout: angular
+			file: template.login.htm
+			data: {
+				ng-controller: LoginCtrl
+			}
+		}
+	}
+}
