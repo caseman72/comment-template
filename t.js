@@ -7,7 +7,7 @@ var hash_get = require("hash-get-cwm");
 var json_human = require("hjson");
 
 // get site def
-var site_def = json_human.parse(fs.readFileSync("{0}/site_def.json".format(__dirname), "utf8"));
+var site_def = json_human.parse(fs.readFileSync("{0}/site_def.hjson".format(__dirname), "utf8"));
 
 // ng.isDefined
 var ng = {
@@ -59,8 +59,9 @@ var compile = function(lines, data) {
 		if (re_key.exec(line)) {
 			var key = RegExp.$1;
 			var val = hash_get(data, key, "");
+
 			val.length && html.push(val);
-			key === "content" && html.push("\n<!-- {0} -->".format(key));
+			key === "content" && html.push("\n<!-- content -->");
 		}
 		else {
 			html.push(line);
@@ -69,6 +70,7 @@ var compile = function(lines, data) {
 
 	return html;
 };
+
 
 var render = function(page) {
 	page = "{0}".format(page || "/")
